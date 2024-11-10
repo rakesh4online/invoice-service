@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.company.invoice.invoice-service' is invalid and this project uses 'com.company.invoice.invoice_service' instead.
+* The original package name 'com.company.invoice.invoice-service' is invalid and this project uses 'com.company.invoice.invoicedataservice' instead.
 
 # Getting Started
 
