@@ -76,6 +76,35 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	    </dependency>
+	
+	    <!-- H2 Database (for dev purposes) -->
+
+	
+	    <!-- PostgreSQL (for production) -->
+	    <dependency>
+	        <groupId>org.postgresql</groupId>
+	        <artifactId>postgresql</artifactId>
+	        <scope>runtime</scope>
+	    </dependency>
+	
+	    <!-- Spring Security OAuth2 Client (for OAuth2 GitHub) -->
+
+	
+	    <!-- Resilience4J for fault tolerance -->
+
+	
+	    <!-- Spring Boot Actuator (Optional for health monitoring) -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>							
+		
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
