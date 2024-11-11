@@ -1,17 +1,12 @@
 package com.company.invoice.invoicedataservice.model;
 
-import jakarta.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-@Entity
 public class SupplierParty {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String travel_office_name;
-    private TravelOfficeAddress travel_office_address;
-
-
+    @JsonProperty("travel_office_name")
+    private String travelOfficeName;
 }

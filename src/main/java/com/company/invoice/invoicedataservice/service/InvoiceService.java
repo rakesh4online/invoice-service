@@ -4,13 +4,14 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.company.invoice.invoicedataservice.model.Invoice;
+import com.company.invoice.invoicedataservice.db.Invoice;
+import com.company.invoice.invoicedataservice.model.InvoiceDTO;
 
 @Service
 public interface InvoiceService {
 
 
-    public Long saveInvoice(Invoice invoice) ;
+    public Long saveInvoice(InvoiceDTO invoiceDTO) ;
 
 	public Optional<Invoice> findById(Long id); 
 }
