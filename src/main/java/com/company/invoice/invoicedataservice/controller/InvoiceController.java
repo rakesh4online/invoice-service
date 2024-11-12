@@ -29,9 +29,10 @@ public class InvoiceController {
 
     // Endpoint to create an invoice
     @PostMapping("/save")
-    public ResponseEntity<Long> createInvoice(@RequestBody InvoiceDTO invoiceDTO) {
-        Long invoiceId = invoiceService.saveInvoice(invoiceDTO);
-        return ResponseEntity.status(201).body(invoiceId); // Return HTTP 201 (Created) and the invoice ID
+    public ResponseEntity<String> createInvoice(@RequestBody InvoiceDTO invoiceDTO) {
+        //Long invoiceId = invoiceService.saveInvoice(invoiceDTO);
+    	String invoiceDeliveryStatus = invoiceService.saveInvoice(invoiceDTO);
+        return ResponseEntity.status(201).body(invoiceDeliveryStatus); // Return HTTP 201 (Created) and the invoice ID
     }
 
     // Endpoint to get an invoice by ID

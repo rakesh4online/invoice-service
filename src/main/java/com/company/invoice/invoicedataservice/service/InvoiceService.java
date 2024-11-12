@@ -11,7 +11,7 @@ import com.company.invoice.invoicedataservice.model.InvoiceDTO;
 public interface InvoiceService {
 
 
-    public Long saveInvoice(InvoiceDTO invoiceDTO) ;
+    public String saveInvoice(InvoiceDTO invoiceDTO) ;
 
 	public Optional<Invoice> findById(Long id); 
 }

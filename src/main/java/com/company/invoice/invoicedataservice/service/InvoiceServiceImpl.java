@@ -26,9 +26,16 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     @Autowired
     private InvoiceRepository invoiceRepository;
+    
+    private final InvoiceDeliveryService invoiceDeliveryService;
+    
+    @Autowired
+    public InvoiceServiceImpl(InvoiceDeliveryService invoiceDeliveryService) {
+        this.invoiceDeliveryService = invoiceDeliveryService;
+    }
 
     @Override
-    public Long saveInvoice(InvoiceDTO invoiceDTO) {
+    public String saveInvoice(InvoiceDTO invoiceDTO) {
     	
     	Invoice receivedInvoice = new Invoice();
         BillingHeader billingHeader = new BillingHeader(); 
@@ -92,7 +99,11 @@ public class InvoiceServiceImpl implements InvoiceService {
         receivedInvoice.setSupplierParty(supplierParty);
         
         Invoice savedInvoice = invoiceRepository.save(receivedInvoice); // Save the invoice and get the saved entity
-        return savedInvoice.getId(); // Return the generated ID of the saved invoice
+        //return savedInvoice.getId(); // Return the generated ID of the saved invoice
+        
+        String responseMessage = invoiceDeliveryService.sendRequestToDelivery();
+        return responseMessage;
+        
     }
     
     public Optional<Invoice> findById(Long id) {
