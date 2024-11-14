@@ -100,7 +100,9 @@ public class InvoiceServiceImpl implements InvoiceService {
         
         Invoice savedInvoice = invoiceRepository.save(receivedInvoice); // Save the invoice and get the saved entity
         //return savedInvoice.getId(); // Return the generated ID of the saved invoice
-        
+        if(callerName.equals("CALLER")) {
+        	return "OK";
+        }
         String responseMessage = invoiceDeliveryService.sendRequestToDelivery();
         return responseMessage;
         
